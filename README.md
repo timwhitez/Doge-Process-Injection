@@ -11,6 +11,14 @@ Demo of process injection, using Nt, direct syscall, etc.
 Process injection demo by golang
 
 Using BananaPhone for direct syscalls
+## Usage
+### Build
+go build goinjection.go
+
+### Run
+./goinjection.exe <processName1> <processName2> ....
+
+it will sequential search the exist process
 
 ## Todo
 Different injection ways. 
