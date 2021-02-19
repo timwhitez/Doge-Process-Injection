@@ -12,6 +12,9 @@ Process injection demo by golang
 
 Using BananaPhone for direct syscalls
 
+## Todo
+Different ways for injection
+
 ## Reference
 ### Project Reference
 - [OwOwningTheWinAPI](https://github.com/secfurry/OwOwningTheWinAPI)
