@@ -2,8 +2,6 @@
 
 - 本人github的项目可能目前主要分为两大类，🐸Frog系列为自动化扫描方向，🐶Doge系列为免杀及内网渗透方向
 
-- 本系列命名为Frog可能是因为这种生物的寿命长 🐸 🤓 +1s 
-
 # 🐶Doge-Process-Injection
 Demo of process injection, using Nt, direct syscall, etc.
 
