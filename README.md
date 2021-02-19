@@ -10,6 +10,7 @@ Using BananaPhone for direct syscalls
 ### Project Reference
 - [OwOwningTheWinAPI](https://github.com/secfurry/OwOwningTheWinAPI)
 - [BananaPhone](https://github.com/C-Sto/BananaPhone)
+- [runsc](https://github.com/mjwhitta/runsc)
 
 ### Windows API Function Reference
 - [NtAllocateVirtualMemory](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntallocatevirtualmemory)
