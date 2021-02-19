@@ -13,7 +13,7 @@ Process injection demo by golang
 Using BananaPhone for direct syscalls
 
 ## Todo
-Different ways for injection
+Different injection ways. 
 
 ## Reference
 ### Project Reference
