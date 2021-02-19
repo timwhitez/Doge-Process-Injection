@@ -1,6 +1,6 @@
 ![Doge-Process-Injection](https://socialify.git.ci/timwhitez/Doge-Process-Injection/image?description=1&font=Raleway&forks=1&issues=1&language=1&logo=https%3A%2F%2Favatars1.githubusercontent.com%2Fu%2F36320909&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Light)
 
-- 本人github的项目可能目前主要分为两大类，🐸Frog系列为自动化扫描方向，🐶Doge系列为免杀及内网渗透方向
+- 🐸Frog For Automatic Scan; 🐶Doge For Defense Evasion&Offensive Security
 
 # 🐶Doge-Process-Injection
 Demo of process injection, using Nt, direct syscall, etc.
