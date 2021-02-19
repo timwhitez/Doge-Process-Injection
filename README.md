@@ -7,9 +7,11 @@ Process injection demo by golang
 Using BananaPhone for direct syscalls
 
 ## Reference
+### Project Reference
 - [OwOwningTheWinAPI](https://github.com/secfurry/OwOwningTheWinAPI)
 - [BananaPhone](https://github.com/C-Sto/BananaPhone)
 
+### Windows API Function Reference
 - [NtAllocateVirtualMemory](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntallocatevirtualmemory)
 - [NtWriteVirtualMemory](http://www.codewarrior.cn/ntdoc/winnt/mm/NtWriteVirtualMemory.htm)
 - [NtCreateThreadEx](https://securityxploded.com/ntcreatethreadex.php)
