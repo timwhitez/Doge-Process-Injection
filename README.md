@@ -11,6 +11,7 @@ Using BananaPhone for direct syscalls
 - [OwOwningTheWinAPI](https://github.com/secfurry/OwOwningTheWinAPI)
 - [BananaPhone](https://github.com/C-Sto/BananaPhone)
 - [runsc](https://github.com/mjwhitta/runsc)
+- [go-procinject](https://github.com/neox41/go-procinject)
 
 ### Windows API Function Reference
 - [NtAllocateVirtualMemory](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntallocatevirtualmemory)
