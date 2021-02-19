@@ -16,7 +16,7 @@ Using BananaPhone for direct syscalls
 go build goinjection.go
 
 ### Run
-./goinjection.exe <processName1> <processName2> ....
+./goinjection.exe processName1 processName2 ....
 
 it will sequential search the exist process
 
