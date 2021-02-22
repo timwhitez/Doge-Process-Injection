@@ -5,7 +5,7 @@
 - 🐶Doge For Defense Evasion&Offensive Security
 
 # 🐶Doge-Process-Injection
-Demo of process injection, using Nt, direct syscall, etc.
+Demo of process injection, using ntdll.dll, direct syscall, etc.
 
 ## goinjection
 Process injection demo by golang
