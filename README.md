@@ -13,10 +13,10 @@ Process injection demo by golang
 Using BananaPhone for direct syscalls
 ## Usage
 ### Build
-go build goinjection.go
+go build main.go
 
 ### Run
-./goinjection.exe processName1 processName2 ....
+./main.exe processName1 processName2 ....
 
 it will sequential search the exist process
 
