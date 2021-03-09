@@ -29,6 +29,7 @@ Different injection ways.
 - [BananaPhone](https://github.com/C-Sto/BananaPhone)
 - [runsc](https://github.com/mjwhitta/runsc)
 - [go-procinject](https://github.com/neox41/go-procinject)
+- [go-shellcode](https://github.com/Ne0nd0g/go-shellcode)
 
 ### Windows API Function Reference
 - [NtAllocateVirtualMemory](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntallocatevirtualmemory)
