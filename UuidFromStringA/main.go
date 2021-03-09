@@ -177,7 +177,7 @@ func main() {
 func shellcodeToUUID(shellcode []byte) ([]string, error) {
 
 	// Pad shellcode to 16 bytes, the size of a UUID
-	if 16-len(shellcode)%16 > 1 {
+	if 16-len(shellcode)%16 > 0 {
 		pad := bytes.Repeat([]byte{byte(0x90)}, 16-len(shellcode)%16)
 		shellcode = append(shellcode, pad...)
 	}
