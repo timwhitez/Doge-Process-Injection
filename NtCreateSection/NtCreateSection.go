@@ -30,7 +30,7 @@ type objectAttrs struct {
 // Why are these not defined in the windows pkg?!
 
 // ProcessAllAccess is the PROCESS_ALL_ACCESS const from winnt.h
-const ProcessAllAccess = 0x1fffff
+const ProcessAllAccess = syscall.STANDARD_RIGHTS_REQUIRED | syscall.SYNCHRONIZE | 0xfff
 
 // SecCommit is the SEC_COMMIT const from winnt.h
 const SecCommit = 0x08000000
